@@ -1,13 +1,12 @@
 import React from 'react';
 import Slider from 'react-slick';
-import ProductCard from './ProductCard';
-
+import ProductCard from '../common/ProductCard';
 
 // Import slick-carousel CSS directly in the JavaScript file
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-import Button from './Button';
+import Button from '../common/Button';
 
 import productImage1 from '../../assets/product.jpg';
 import productImage2 from '../../assets/model2.jpeg';
@@ -61,8 +60,8 @@ const LatestProductsSection = () => {
   };
 
   return (
-    <div className="container mx-auto my-8">
-     <div className="text-center mb-8">
+    <div className="container mx-auto my-8 overflow-hidden">
+      <div className="text-center mb-8">
         <h2 className="text-gray-500 text-lg mb-2 relative flex items-center justify-center">
           <span className="flex-grow border-t border-gray-300 mx-4"></span>
           Derniers produits
@@ -70,13 +69,15 @@ const LatestProductsSection = () => {
         </h2>
         <h1 className="text-3xl font-bold">Nouveaux arrivages</h1>
       </div>
-       <Slider {...settings} className="mx-4">
-        {products.map(product => (
-          <div key={product.id} className="px-2">
-            <ProductCard {...product} />
-          </div>
-        ))}
-      </Slider>
+      <div className="relative">
+        <Slider {...settings}>
+          {products.map(product => (
+            <div key={product.id} className="px-2 pb-5">
+              <ProductCard {...product} />
+            </div>
+          ))}
+        </Slider>
+      </div>
       <div className="text-center mt-16">
         <Button onClick={() => console.log('View More clicked')}>View More</Button>
       </div>

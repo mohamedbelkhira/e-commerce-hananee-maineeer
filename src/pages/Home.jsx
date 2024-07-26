@@ -1,9 +1,18 @@
 import React from 'react';
-
+import Banner from '../components/major/Banner';
+import LatestProductsSection from '../components/major/LatestProductsSection';
+import PopularProductsSection from '../components/major/PopularProductsSection';
+import WhyUsSection from '../components/major/WhyUsSection';
+import ClientReviewsSection from '../components/major/ClientReviewsSection';
 const Home = () => {
   return (
     <div className="home">
-      <h1 className="text-3xl font-bold underline">Home Page</h1>
+      <Banner />
+    
+    <LatestProductsSection />
+    <PopularProductsSection />
+    <WhyUsSection />
+    <ClientReviewsSection /> 
     </div>
   );
 };

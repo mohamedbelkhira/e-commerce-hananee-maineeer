@@ -41,7 +41,7 @@ const ClientReviewsSection = () => {
   };
 
   return (
-    <div className="bg-white py-12">
+    <div className="bg-white py-12 overflow-hidden">
         
       <div className="container mx-auto text-center">
       <div className="text-center mb-8">
