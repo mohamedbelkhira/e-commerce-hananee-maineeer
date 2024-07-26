@@ -14,18 +14,18 @@ const Footer = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center md:items-start flex-grow md:flex-grow-0">
-            <p className="text-center md:text-left max-w-md">
+            <p className="text-xl text-center md:text-left max-w-md">
               Notre objectif est d’habiller chaque femme avec élégance et originalité, en mettant
               l'accent sur la qualité à chaque étape.
             </p>
           </div>
         <div className="flex flex-col items-center md:items-start mt-4 md:mt-0">
-          <nav className="flex flex-row items-center space-x-6 mb-4 md:mb-0">
+          <nav className="flex flex-row text-xl items-center space-x-6 mb-4 md:mb-0">
             <Link to="/" className="hover:text-gray-300">Accueil</Link>
             <Link to="/about" className="hover:text-gray-300">A Propos</Link>
             <Link to="/shop" className="hover:text-gray-300">Boutique</Link>
           </nav>
-          <div className="text-center md:text-left pt-4">
+          <div className="text-center md:text-left text-xl pt-4">
             <h3 className="font-semibold mb-2">Contactez nous</h3>
             <div className="flex items-center space-x-2">
               <img src={InstagramIcon} alt="Instagram" className="h-6 w-6" />

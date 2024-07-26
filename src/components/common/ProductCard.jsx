@@ -8,7 +8,7 @@ const ProductCard = ({ id, name, category, price, imageUrl }) => {
         <img className="w-full h-48 md:h-56 lg:h-64 object-cover" src={imageUrl} alt={name} />
         <div className="absolute bottom-0 left-0 right-0 px-6 py-4 transform opacity-0 group-hover:opacity-100 group-hover:translate-y-0 translate-y-full transition-all duration-500">
           <Link to={`/product/${id}`} className="block bg-black text-white text-center w-auto px-6 py-2 mx-auto rounded">
-            View Product
+            Voir produit
           </Link>
         </div>
       </div>

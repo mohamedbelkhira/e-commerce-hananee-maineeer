@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        garamond: ['"EB Garamond"', 'serif'],
+      },
       colors: {
         'custom-light-pink': '#FAF4F4',
         'custom-light-grey': '#F3F3F3',

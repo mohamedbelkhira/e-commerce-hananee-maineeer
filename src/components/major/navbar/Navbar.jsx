@@ -17,7 +17,7 @@ const Navbar = () => {
         <img src={logo} alt="Logo" className="h-12" /> {/* Imported logo */}
       </Link>
       <div className="flex items-center ml-auto">
-        <nav className="hidden md:flex items-center space-x-8 text-lg"> {/* Hide on mobile, show on desktop */}
+        <nav className="hidden md:flex items-center space-x-8 text-2xl pr-10"> {/* Hide on mobile, show on desktop */}
           <Link to="/" className="hover:text-gray-300">Accueil</Link>
           <Link to="/about" className="hover:text-gray-300">A Propos</Link>
           <Link to="/shop" className="hover:text-gray-300">Boutique</Link>
