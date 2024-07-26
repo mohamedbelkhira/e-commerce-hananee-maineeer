@@ -10,13 +10,15 @@ const Footer = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center">
         <div className="flex flex-col md:flex-row items-center md:space-x-4 w-full md:w-auto">
           <img src={logo} alt="Logo" className="h-24 mb-4 md:mb-0" />
-          <div className="flex flex-col items-center md:items-center md:justify-center md:flex-1">
-            <p className="text-center md:text-left max-w-md mx-auto md:mx-20">
+          
+        </div>
+
+        <div className="flex flex-col justify-center items-center md:items-start flex-grow md:flex-grow-0">
+            <p className="text-center md:text-left max-w-md">
               Notre objectif est d’habiller chaque femme avec élégance et originalité, en mettant
               l'accent sur la qualité à chaque étape.
             </p>
           </div>
-        </div>
         <div className="flex flex-col items-center md:items-start mt-4 md:mt-0">
           <nav className="flex flex-row items-center space-x-6 mb-4 md:mb-0">
             <Link to="/" className="hover:text-gray-300">Accueil</Link>

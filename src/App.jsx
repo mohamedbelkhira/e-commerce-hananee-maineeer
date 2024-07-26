@@ -6,8 +6,11 @@ import Navbar from './components/major/navbar/Navbar';
 import Footer from './components/major/footer/Footer';
 import Banner from './components/major/Banner';
 
-import ListProduct from './components/common/ListProduct';
-import ProductCarousel from './components/common/ProductCarousel';
+import LatestProductsSection from './components/common/LatestProductsSection';
+import PopularProductsSection from './components/common/PopularProductsSection';
+import WhyUsSection from './components/common/WhyUsSection';
+import ClientReviewsSection from './components/common/ClientReviewsSection';
+
 
 const App = () => {
   return (
@@ -15,7 +18,10 @@ const App = () => {
 <div className="flex flex-col min-h-screen">
 <Navbar />
 <Banner />
-<ProductCarousel />
+<LatestProductsSection />
+<PopularProductsSection />
+<WhyUsSection />
+<ClientReviewsSection/>
       <Router />
 <Footer />
 

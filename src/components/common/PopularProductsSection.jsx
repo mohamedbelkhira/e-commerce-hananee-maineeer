@@ -1,24 +1,30 @@
 import React from 'react';
 import Slider from 'react-slick';
 import ProductCard from './ProductCard';
-import productImage from '../../assets/product.jpg';
+
 
 // Import slick-carousel CSS directly in the JavaScript file
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 import Button from './Button';
+
+import productImage1 from '../../assets/product.jpg';
+import productImage2 from '../../assets/model2.jpeg';
+import productImage3 from '../../assets/model3.jpeg';
+import productImage4 from '../../assets/produt_jaune.jpg';
+
 const products = [
-  { id: '1', name: 'Luxurious Product 1', category: 'Chaussures', price: 2499, imageUrl: productImage },
-  { id: '2', name: 'Luxurious Product 2', category: 'Chaussures', price: 2499, imageUrl: productImage },
-  { id: '3', name: 'Luxurious Product 3', category: 'Chaussures', price: 2499, imageUrl: productImage },
-  { id: '4', name: 'Luxurious Product 4', category: 'Chaussures', price: 2499, imageUrl: productImage },
-  { id: '5', name: 'Luxurious Product 5', category: 'Chaussures', price: 2499, imageUrl: productImage },
-  { id: '6', name: 'Luxurious Product 6', category: 'Chaussures', price: 2499, imageUrl: productImage },
+  { id: '1', name: 'Luxurious Product 1', category: 'Chaussures', price: 2499, imageUrl: productImage1 },
+  { id: '2', name: 'Luxurious Product 2', category: 'Chaussures', price: 2499, imageUrl: productImage2 },
+  { id: '3', name: 'Luxurious Product 3', category: 'Chaussures', price: 2499, imageUrl: productImage3 },
+  { id: '4', name: 'Luxurious Product 4', category: 'Chaussures', price: 2499, imageUrl: productImage4 },
+  { id: '5', name: 'Luxurious Product 5', category: 'Chaussures', price: 2499, imageUrl: productImage3 },
+  { id: '6', name: 'Luxurious Product 6', category: 'Chaussures', price: 2499, imageUrl: productImage2 },
   // Add more products as needed
 ];
 
-const ProductCarousel = () => {
+const PopularProductsSection = () => {
   const settings = {
     dots: true,
     infinite: true,
@@ -59,10 +65,10 @@ const ProductCarousel = () => {
      <div className="text-center mb-8">
         <h2 className="text-gray-500 text-lg mb-2 relative flex items-center justify-center">
           <span className="flex-grow border-t border-gray-300 mx-4"></span>
-          Derniers produits
+          Produits Populaires
           <span className="flex-grow border-t border-gray-300 mx-4"></span>
         </h2>
-        <h1 className="text-3xl font-bold">Nouveaux arrivages</h1>
+        <h1 className="text-3xl font-bold">Nos Meilleurs Ventes</h1>
       </div>
        <Slider {...settings} className="mx-4">
         {products.map(product => (
@@ -78,4 +84,4 @@ const ProductCarousel = () => {
   );
 };
 
-export default ProductCarousel;
+export default PopularProductsSection;

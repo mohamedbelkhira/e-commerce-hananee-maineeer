@@ -8,6 +8,7 @@ export default {
     extend: {
       colors: {
         'custom-light-pink': '#FAF4F4',
+        'custom-light-grey': '#F3F3F3',
       },
     },
   },
