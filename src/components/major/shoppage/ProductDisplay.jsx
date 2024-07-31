@@ -14,7 +14,6 @@ const sampleProducts = [
   { id: '2', name: 'Luxurious Product 2', category: 'Chaussures', price: 2499, imageUrl: productImage2 },
   { id: '3', name: 'Luxurious Product 3', category: 'Vetments', price: 2499, imageUrl: productImage3 },
   { id: '4', name: 'Luxurious Product 4', category: 'Chaussures', price: 2499, imageUrl: productImage4 },
-
   { id: '5', name: 'Luxurious Product 1', category: 'Chaussures', price: 2499, imageUrl: productImage1 },
   { id: '6', name: 'Luxurious Product 2', category: 'Chaussures', price: 2499, imageUrl: productImage2 },
   { id: '7', name: 'Luxurious Product 3', category: 'Vetments', price: 2499, imageUrl: productImage3 },

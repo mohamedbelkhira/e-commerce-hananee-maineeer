@@ -6,30 +6,51 @@ const ProductFilter = ({ categories, onFilterChange }) => {
   const [maxPrice, setMaxPrice] = useState('');
 
   const handleCategoryChange = (e) => {
-    setSelectedCategory(e.target.value);
-    onFilterChange({ category: e.target.value, minPrice, maxPrice });
+    const category = e.target.value;
+    setSelectedCategory(category);
+    onFilterChange({ category, minPrice, maxPrice });
   };
 
   const handleMinPriceChange = (e) => {
-    setMinPrice(e.target.value);
-    onFilterChange({ category: selectedCategory, minPrice: e.target.value, maxPrice });
+    const price = e.target.value;
+    setMinPrice(price);
+    onFilterChange({ category: selectedCategory, minPrice: price, maxPrice });
   };
 
   const handleMaxPriceChange = (e) => {
-    setMaxPrice(e.target.value);
-    onFilterChange({ category: selectedCategory, minPrice, maxPrice: e.target.value });
+    const price = e.target.value;
+    setMaxPrice(price);
+    onFilterChange({ category: selectedCategory, minPrice, maxPrice: price });
   };
 
   return (
     <div className="bg-gray-100 p-6 rounded-lg shadow-md mb-8 flex flex-col space-y-4">
       <div>
         <label className="block text-lg font-medium mb-2">Categorie</label>
-        <select value={selectedCategory} onChange={handleCategoryChange} className="p-2 rounded-lg shadow-md w-full">
-          <option value="">All Categories</option>
+        <div className="flex flex-col space-y-2">
+          <label className="flex items-center">
+            <input
+              type="radio"
+              value=""
+              checked={selectedCategory === ''}
+              onChange={handleCategoryChange}
+              className="mr-2"
+            />
+            All Categories
+          </label>
           {categories.map((category, index) => (
-            <option key={index} value={category}>{category}</option>
+            <label key={index} className="flex items-center">
+              <input
+                type="radio"
+                value={category}
+                checked={selectedCategory === category}
+                onChange={handleCategoryChange}
+                className="mr-2"
+              />
+              {category}
+            </label>
           ))}
-        </select>
+        </div>
       </div>
       <div>
         <label className="block text-lg font-medium mb-2">Prix min</label>
