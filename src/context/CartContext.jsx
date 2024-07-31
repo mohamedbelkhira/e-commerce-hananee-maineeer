@@ -23,12 +23,12 @@ export const CartProvider = ({ children }) => {
 
   const removeFromCart = (productId, productColor) => {
     setCart((prevCart) => prevCart.filter(
-      product => product.id !== productId || product.color !== productColor
+      product => !(product.id === productId && product.color === productColor)
     ));
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, setCart, addToCart, removeFromCart }}>
       {children}
     </CartContext.Provider>
   );

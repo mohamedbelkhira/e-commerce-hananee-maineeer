@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import ProductCard from '../common/ProductCard';
+import { useNavigate } from 'react-router-dom';
 
 // Import slick-carousel CSS directly in the JavaScript file
 import 'slick-carousel/slick/slick.css';
@@ -24,6 +25,7 @@ const products = [
 ];
 
 const LatestProductsSection = () => {
+  const navigate = useNavigate();
   const settings = {
     dots: true,
     infinite: true,
@@ -59,6 +61,11 @@ const LatestProductsSection = () => {
     ]
   };
 
+  const handleClick = () => {
+  
+    navigate('/shop'); // Redirect to the shop page
+  };
+
   return (
     <div className="container mx-auto my-8 overflow-hidden">
       <div className="text-center mb-8">
@@ -79,7 +86,7 @@ const LatestProductsSection = () => {
         </Slider>
       </div>
       <div className="text-center mt-16">
-        <Button onClick={() => console.log('View More clicked')}>View More</Button>
+        <Button onClick={handleClick}>View More</Button>
       </div>
     </div>
   );
