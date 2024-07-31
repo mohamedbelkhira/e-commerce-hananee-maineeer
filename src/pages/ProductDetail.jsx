@@ -3,7 +3,8 @@ import { useParams } from 'react-router-dom';
 import { getProductById } from '../services/ProductService';
 import ShoppingCart from '../assets/shopping-cart.png';
 import CartContext from '../context/CartContext';
-
+import { toast } from 'react-toastify';
+toast
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -29,6 +30,7 @@ const ProductDetail = () => {
       price: product.price,
       imageUrl: selectedColor.imageUrl,
     });
+    toast.success(`${product.name} ajouté au panier!`);
   };
 
   if (!product) return <div>Product not found</div>;
