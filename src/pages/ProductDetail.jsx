@@ -1,30 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { getProductById } from '../services/ProductService'; // Import the service
+import React, { useState, useEffect, useContext } from 'react';
+import { useParams } from 'react-router-dom';
+import { getProductById } from '../services/ProductService';
 import ShoppingCart from '../assets/shopping-cart.png';
+import CartContext from '../context/CartContext';
 
 const ProductDetail = () => {
+  const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [selectedColor, setSelectedColor] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
-    // Fetch the product with id '1' for testing purposes
-    getProductById('1').then((product) => {
+    getProductById(id).then((product) => {
       setProduct(product);
       setSelectedColor(product.colors[0]);
     }).catch((error) => {
       console.error(error);
     });
-  }, []);
+  }, [id]);
 
   const handleAddToCart = () => {
-    // Handle adding the product to the cart (this could involve updating a global state, making a backend request, etc.)
-    console.log('Product added to cart:', {
+    addToCart({
       id: product.id,
       name: product.name,
       color: selectedColor.color,
       quantity,
-      price: product.price
+      price: product.price,
+      imageUrl: selectedColor.imageUrl,
     });
   };
 
@@ -47,15 +50,15 @@ const ProductDetail = () => {
             <div className="flex justify-center md:justify-start space-x-4 mb-10">
               {product.colors.map((colorOption, index) => (
                 <button
-                key={index}
-                onClick={() => setSelectedColor(colorOption)}
-                className={`flex items-center justify-center p-2 rounded-full w-14 h-14 border-2 shadow-md transition-transform duration-300 ${selectedColor.color === colorOption.color ? 'border-gray-800 transform scale-110' : 'border-transparent'}`}
-              >
-                <span
-                  className="w-8 h-8 rounded-full"
-                  style={{ backgroundColor: colorOption.hex }}
-                />
-              </button>
+                  key={index}
+                  onClick={() => setSelectedColor(colorOption)}
+                  className={`flex items-center justify-center p-2 rounded-full w-14 h-14 border-2 shadow-md transition-transform duration-300 ${selectedColor.color === colorOption.color ? 'border-gray-800 transform scale-110' : 'border-transparent'}`}
+                >
+                  <span
+                    className="w-8 h-8 rounded-full"
+                    style={{ backgroundColor: colorOption.hex }}
+                  />
+                </button>
               ))}
             </div>
             <div className="flex items-center mb-4">
